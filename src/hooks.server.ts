@@ -8,30 +8,10 @@ const fakeData = `
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div>
+		<header><nav><ul><li><a href="/">Home</a></li> <li><a href="/about">About</a></li></ul></nav></header>
 <h1>Welcome to your library project</h1>
 <p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-			<script>
-				{
-					__sveltekit_dev = {
-						base: new URL(".", location).pathname.slice(0, -1),
-						env: {}
-					};
-					const element = document.currentScript.parentElement;
-					const data = [null,{"type":"data","data":{articles:[{id:1,title:"Article 1"},{id:2,title:"Article 2"}]},"uses":{}}];
-					Promise.all([
-						import("/node_modules/@sveltejs/kit/src/runtime/client/start.js"),
-						import("/@fs/Users/sondt/Works/Learning/Svelte/testHooks/.svelte-kit/generated/client/app.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 2],
-							data,
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
+<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>			
 		</div>
 	</body>
 </html>
@@ -49,5 +29,5 @@ export async function handle({ event, resolve }) {
         });
 
     }
-    return await resolve(event);
+   return resolve(event);
 }
